@@ -84,12 +84,13 @@ def cost(p,o):
     s+=((i&f(p))-o[i])**2
   s/=len(o)
   return math.sqrt(s)
+
 def mCost(m):
   s=0
   for i in range(2**len(m[0])):
     p=conv(i,len(m[0]))
     s+=cost(p,predict(p,m))
-  return s
+  return s/(2**len(m[0]))
 
 eS=0.1
 
